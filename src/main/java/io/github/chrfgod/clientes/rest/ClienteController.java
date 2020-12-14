@@ -13,6 +13,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/clientes")
+@CrossOrigin("*")
 public class ClienteController {
 
     private final ClienteRepository repository;
@@ -35,7 +36,7 @@ public class ClienteController {
     }
 
     @GetMapping()
-    public List<Cliente> buscarTodosClientes(){
+    public List<Cliente> obterTodos(){
         return repository.findAll();
     }
 
